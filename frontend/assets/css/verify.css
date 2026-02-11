@@ -1,0 +1,200 @@
+:root {
+    --primary: #265D82;
+    --primary-dark: #1D4A69;
+    --bg-light: #F5F7FA;
+    --text-main: #1D4A69;
+    --text-muted: #64748b;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-light);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.verify-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    animation: slideUp 0.5s ease-out;
+    margin-top: 80px;
+    /* Space for overlapping logo */
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo-container {
+    position: relative;
+    height: 60px;
+    /* This container will never grow */
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.logo-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 290px !important;
+    /* You can now increase this freely */
+    max-width: none !important;
+    width: auto !important;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo-container img:hover {
+    transform: translate(-50%, -50%) scale(1.1) rotate(2deg);
+}
+
+.verify-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 12px;
+}
+
+.verify-subtitle {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.code-input-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.code-digit {
+    width: 48px;
+    height: 60px;
+    border: 2px solid #DDE1E3;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text-main);
+    transition: all 0.2s;
+    background: #fcfdfe;
+}
+
+.code-digit:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(0, 112, 186, 0.1);
+    background: white;
+    outline: none;
+}
+
+.btn-verify {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 112, 186, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-verify:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 112, 186, 0.3);
+}
+
+.btn-verify:active {
+    transform: translateY(0);
+}
+
+.btn-verify:disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.resend-box {
+    margin-top: 24px;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.resend-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.resend-link:hover {
+    text-decoration: underline;
+    color: var(--primary-dark);
+}
+
+.alert {
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    font-weight: 700;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.alert-error {
+    background: #FFF0F0;
+    color: #C41212;
+    border: 1px solid #FACDCD;
+}
+
+.alert-success {
+    background: #E7F6EC;
+    color: #097230;
+    border: 1px solid #D1EEDD;
+}
+
+.hidden {
+    display: none !important;
+}

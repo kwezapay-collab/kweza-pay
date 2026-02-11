@@ -1,0 +1,496 @@
+<!-- Add these modals before the closing </body> tag in student.php -->
+
+<!-- Event Tickets Modal -->
+<div id="eventTicketsModal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 600px;">
+        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 20px;">
+            <i class="fas fa-ticket-alt"></i> Event Tickets
+        </h3>
+        <div style="margin-bottom: 20px;">
+            <button class="btn btn-primary" onclick="viewMyTickets()" style="width: auto; margin-right: 10px;">
+                <i class="fas fa-list"></i> My Tickets
+            </button>
+        </div>
+        <div id="eventsListContainer" style="max-height: 500px; overflow-y: auto;">
+            <!-- Events will be loaded here -->
+        </div>
+        <button class="btn btn-outline" style="margin-top: 20px;"
+            onclick="closeModal('eventTicketsModal')">Close</button>
+    </div>
+</div>
+
+<!-- Event Details Modal -->
+<div id="eventDetailsModal" class="modal-overlay">
+    <div class="modal-content">
+        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 15px;">Purchase Ticket</h3>
+        <div id="eventDetailsContent" style="margin-bottom: 20px;">
+            <!-- Event details will be loaded here -->
+        </div>
+        <input type="hidden" id="selectedEventId">
+        <button class="btn btn-primary" onclick="purchaseTicket()">Confirm Purchase</button>
+        <button class="btn" style="margin-top: 10px; color: #6C7378;"
+            onclick="closeModal('eventDetailsModal'); document.getElementById('eventTicketsModal').style.display='flex';">Back</button>
+    </div>
+</div>
+
+<!-- My Tickets Modal -->
+<div id="myTicketsModal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 600px;">
+        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 20px;">
+            <i class="fas fa-ticket-alt"></i> My Tickets
+        </h3>
+        <div id="myTicketsContainer" style="max-height: 500px; overflow-y: auto;">
+            <!-- Tickets will be loaded here -->
+        </div>
+        <button class="btn btn-outline" style="margin-top: 20px;"
+            onclick="closeModal('myTicketsModal'); document.getElementById('eventTicketsModal').style.display='flex';">Back</button>
+    </div>
+</div>
+
+<!-- Campus Cafe Modal -->
+<div id="campusCafeModal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 600px;">
+        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 20px;">
+            <i class="fas fa-utensils"></i> Campus Cafe
+        </h3>
+        <div id="cafesListContainer" style="max-height: 500px; overflow-y: auto;">
+            <!-- Cafes will be loaded here -->
+        </div>
+        <button class="btn btn-outline" style="margin-top: 20px;" onclick="closeModal('campusCafeModal')">Close</button>
+    </div>
+</div>
+
+<!-- Cafe Payment Modal -->
+<div id="cafePaymentModal" class="modal-overlay">
+    <div class="modal-content">
+        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 15px;">Pay at Campus Cafe</h3>
+        <div id="cafeDetailsContent" style="margin-bottom: 20px;">
+            <!-- Cafe details will be loaded here -->
+        </div>
+        <input type="hidden" id="selectedCafeId">
+        <input type="number" id="cafePaymentAmount" class="input-field" placeholder="Amount (MWK)" min="1" step="0.01">
+        <input type="text" id="cafePaymentDescription" class="input-field" placeholder="Description (optional)">
+        <button class="btn btn-primary" onclick="processCafePayment()">Confirm Payment</button>
+        <button class="btn" style="margin-top: 10px; color: #6C7378;"
+            onclick="closeModal('cafePaymentModal'); document.getElementById('campusCafeModal').style.display='flex';">Back</button>
+    </div>
+</div>
+
+<!-- Notification Panel -->
+<div id="notificationPanel" class="modal-overlay">
+    <div class="modal-content">
+        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 15px;">Notifications</h3>
+        <div style="padding: 20px; text-align: center; color: #6C7378;">
+            <i class="far fa-bell" style="font-size: 40px; margin-bottom: 15px; display: block;"></i>
+            <p>You're all caught up! No new notifications.</p>
+        </div>
+        <button class="btn btn-primary" onclick="closeModal('notificationPanel')">Great</button>
+    </div>
+</div>
+
+<style>
+    .event-card,
+    .ticket-card,
+    .cafe-card {
+        background: white;
+        border: 1px solid var(--pp-border);
+        border-radius: 12px;
+        padding: 15px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        gap: 15px;
+    }
+
+    .event-card:hover,
+    .cafe-card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+    }
+
+    .ticket-card {
+        cursor: default;
+    }
+
+    .event-image,
+    .cafe-image {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 8px;
+        flex-shrink: 0;
+    }
+
+    .event-info,
+    .cafe-info {
+        flex: 1;
+    }
+
+    .event-title,
+    .cafe-title {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 5px;
+        color: var(--pp-dark-blue);
+    }
+
+    .event-description,
+    .cafe-description {
+        font-size: 13px;
+        color: var(--pp-text-secondary);
+        margin-bottom: 10px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        line-clamp: 2;
+    }
+
+    .event-meta,
+    .cafe-meta {
+        font-size: 12px;
+        color: var(--pp-text-secondary);
+        margin-bottom: 10px;
+    }
+
+    .event-meta div,
+    .cafe-meta div {
+        margin-bottom: 5px;
+    }
+
+    .event-meta i,
+    .cafe-meta i {
+        margin-right: 5px;
+        color: var(--pp-blue);
+    }
+
+    .event-price {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--pp-blue);
+    }
+
+    .event-availability {
+        font-size: 12px;
+        color: var(--pp-text-secondary);
+        margin-top: 5px;
+    }
+
+    .cafe-code {
+        font-family: monospace;
+        font-weight: 700;
+        color: var(--pp-blue);
+        background: #f0f7ff;
+        padding: 8px 12px;
+        border-radius: 6px;
+        margin-top: 10px;
+        display: inline-block;
+    }
+
+    .cafe-qr {
+        max-width: 150px;
+        margin-top: 10px;
+        border: 2px solid var(--pp-border);
+        border-radius: 8px;
+    }
+</style>
+
+<script>
+    // Event Tickets Functions
+    function openEventTickets() {
+        document.getElementById('eventTicketsModal').style.display = 'flex';
+        loadAvailableEvents();
+    }
+
+    async function loadAvailableEvents() {
+        try {
+            const res = await fetch('../backend/api/get_events.php');
+            const data = await res.json();
+
+            if (data.success) {
+                const container = document.getElementById('eventsListContainer');
+                if (data.events.length === 0) {
+                    container.innerHTML = '<p style="text-align: center; color: var(--pp-text-secondary);">No events available at the moment.</p>';
+                    return;
+                }
+
+                container.innerHTML = data.events.map(event => `
+                <div class="event-card" onclick="viewEventDetails(${event.event_id})">
+                    ${event.event_picture ? `<img src="${event.event_picture}" class="event-image" alt="${event.event_name}">` : ''}
+                    <div class="event-info">
+                        <h4 class="event-title">${event.event_name}</h4>
+                        <p class="event-description">${event.event_description || ''}</p>
+                        <div class="event-meta">
+                            ${event.event_date ? `<div><i class="fas fa-calendar"></i> ${new Date(event.event_date).toLocaleDateString()}</div>` : ''}
+                            ${event.event_location ? `<div><i class="fas fa-map-marker-alt"></i> ${event.event_location}</div>` : ''}
+                        </div>
+                        <div class="event-price">MWK ${parseFloat(event.ticket_price).toLocaleString()}</div>
+                        ${event.max_tickets ? `<div class="event-availability">${event.tickets_sold || 0} / ${event.max_tickets} sold</div>` : ''}
+                    </div>
+                </div>
+            `).join('');
+            }
+        } catch (e) {
+            console.error('Error loading events:', e);
+        }
+    }
+
+    async function viewEventDetails(eventId) {
+        try {
+            const res = await fetch('../backend/api/get_events.php');
+            const data = await res.json();
+
+            if (data.success) {
+                const event = data.events.find(e => e.event_id == eventId);
+                if (event) {
+                    document.getElementById('selectedEventId').value = eventId;
+                    document.getElementById('eventDetailsContent').innerHTML = `
+                    ${event.event_picture ? `<img src="${event.event_picture}" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">` : ''}
+                    <h3 style="margin-bottom: 10px;">${event.event_name}</h3>
+                    <p style="color: var(--pp-text-secondary); margin-bottom: 15px;">${event.event_description || ''}</p>
+                    <div style="margin-bottom: 10px;"><strong>Price:</strong> MWK ${parseFloat(event.ticket_price).toLocaleString()}</div>
+                    ${event.event_date ? `<div style="margin-bottom: 10px;"><strong>Date:</strong> ${new Date(event.event_date).toLocaleString()}</div>` : ''}
+                    ${event.event_location ? `<div style="margin-bottom: 10px;"><strong>Location:</strong> ${event.event_location}</div>` : ''}
+                    ${event.max_tickets ? `<div style="margin-bottom: 10px;"><strong>Availability:</strong> ${event.max_tickets - (event.tickets_sold || 0)} tickets remaining</div>` : ''}
+                `;
+                    closeModal('eventTicketsModal');
+                    document.getElementById('eventDetailsModal').style.display = 'flex';
+                }
+            }
+        } catch (e) {
+            alert('Error loading event details');
+        }
+    }
+
+    async function purchaseTicket() {
+        const eventId = document.getElementById('selectedEventId').value;
+
+        try {
+            const res = await fetch('../backend/api/purchase_ticket.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ event_id: eventId })
+            });
+            const data = await res.json();
+
+            if (data.success) {
+                closeModal('eventDetailsModal');
+                showTicketReceipt(data);
+            } else {
+                alert('❌ ' + data.error);
+            }
+        } catch (e) {
+            alert('Network error');
+        }
+    }
+
+    function showTicketReceipt(data) {
+        const content = document.getElementById('receiptContent');
+        content.innerHTML = `
+        <img src="assets/img/logo.png" class="receipt-watermark" onerror="this.style.display='none'">
+        <div class="receipt-header">
+            <img src="assets/img/logo.png" class="receipt-logo" onerror="this.src='https://ui-avatars.com/api/?name=KP&background=0D8ABC&color=fff'">
+            <div class="receipt-title-box">
+                <h1 class="receipt-main-title">KWEZA PAY</h1>
+                <span class="receipt-tagline">Event Ticket</span>
+            </div>
+        </div>
+        
+        <div class="receipt-info-line"><span class="receipt-info-label">EVENT:</span> ${data.event_name}</div>
+        <div class="receipt-info-line"><span class="receipt-info-label">TICKET CODE:</span> ${data.ticket_code}</div>
+        <div class="receipt-info-line"><span class="receipt-info-label">REFERENCE:</span> ${data.reference_code}</div>
+        
+        <div class="receipt-section-title">TICKET DETAILS:</div>
+        <div class="receipt-details-grid">
+            <div class="receipt-detail-item">Amount Paid: MK ${parseFloat(data.amount).toLocaleString()}</div>
+            ${data.event_date ? `<div class="receipt-detail-item">Event Date: ${new Date(data.event_date).toLocaleString()}</div>` : ''}
+            ${data.event_location ? `<div class="receipt-detail-item">Location: ${data.event_location}</div>` : ''}
+        </div>
+
+        <div class="receipt-status success">STATUS: CONFIRMED <i class="fas fa-check-circle"></i></div>
+        <div class="receipt-disclaimer">
+             This is your official event ticket. Please present this ticket at the event entrance.
+             <br><br>
+             Keep this ticket safe and do not share your ticket code.
+        </div>
+        <div class="receipt-footer">Thank you for using Kweza Pay</div>
+    `;
+        document.getElementById('receiptModal').style.display = 'flex';
+    }
+
+    function viewMyTickets() {
+        closeModal('eventTicketsModal');
+        loadMyTickets();
+        document.getElementById('myTicketsModal').style.display = 'flex';
+    }
+
+    async function loadMyTickets() {
+        try {
+            const res = await fetch('../backend/api/get_my_tickets.php');
+            const data = await res.json();
+
+            if (data.success) {
+                const container = document.getElementById('myTicketsContainer');
+                if (data.tickets.length === 0) {
+                    container.innerHTML = '<p style="text-align: center; color: var(--pp-text-secondary);">You haven\'t purchased any tickets yet.</p>';
+                    return;
+                }
+
+                container.innerHTML = data.tickets.map(ticket => `
+                <div class="ticket-card">
+                    ${ticket.event_picture ? `<img src="${ticket.event_picture}" class="event-image" alt="${ticket.event_name}">` : ''}
+                    <div class="event-info">
+                        <h4 class="event-title">${ticket.event_name}</h4>
+                        <p style="font-family: monospace; font-weight: 700; color: var(--pp-blue);">${ticket.ticket_code}</p>
+                        <div class="event-meta">
+                            ${ticket.event_date ? `<div><i class="fas fa-calendar"></i> ${new Date(ticket.event_date).toLocaleDateString()}</div>` : ''}
+                            ${ticket.event_location ? `<div><i class="fas fa-map-marker-alt"></i> ${ticket.event_location}</div>` : ''}
+                        </div>
+                        <div class="event-price">MWK ${parseFloat(ticket.purchase_amount).toLocaleString()}</div>
+                        <div style="margin-top: 10px;">
+                            <span style="padding: 5px 10px; background: ${ticket.ticket_status === 'valid' ? '#10b981' : '#6b7280'}; color: white; border-radius: 5px; font-size: 12px; font-weight: 700;">
+                                ${ticket.ticket_status.toUpperCase()}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            }
+        } catch (e) {
+            console.error('Error loading tickets:', e);
+        }
+    }
+
+    // Campus Cafe Functions
+    function openCampusCafe() {
+        document.getElementById('campusCafeModal').style.display = 'flex';
+        loadAvailableCafes();
+    }
+
+    async function loadAvailableCafes() {
+        try {
+            const res = await fetch('../backend/api/get_cafes.php');
+            const data = await res.json();
+
+            if (data.success) {
+                const container = document.getElementById('cafesListContainer');
+                if (data.cafes.length === 0) {
+                    container.innerHTML = '<p style="text-align: center; color: var(--pp-text-secondary);">No campus cafes available at the moment.</p>';
+                    return;
+                }
+
+                container.innerHTML = data.cafes.map(cafe => `
+                <div class="cafe-card" onclick="viewCafeDetails(${cafe.cafe_id})">
+                    ${cafe.cafe_logo ? `<img src="${cafe.cafe_logo}" class="cafe-image" alt="${cafe.cafe_name}">` : ''}
+                    <div class="cafe-info">
+                        <h4 class="cafe-title">${cafe.cafe_name}</h4>
+                        <p class="cafe-description">${cafe.cafe_description || ''}</p>
+                        <div class="cafe-code">
+                            <i class="fas fa-mobile-alt"></i> ${cafe.airtel_money_code}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            }
+        } catch (e) {
+            console.error('Error loading cafes:', e);
+        }
+    }
+
+    async function viewCafeDetails(cafeId) {
+        try {
+            const res = await fetch('../backend/api/get_cafes.php');
+            const data = await res.json();
+
+            if (data.success) {
+                const cafe = data.cafes.find(c => c.cafe_id == cafeId);
+                if (cafe) {
+                    document.getElementById('selectedCafeId').value = cafeId;
+                    document.getElementById('cafeDetailsContent').innerHTML = `
+                    ${cafe.cafe_logo ? `<img src="${cafe.cafe_logo}" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 15px;">` : ''}
+                    <h3 style="margin-bottom: 10px;">${cafe.cafe_name}</h3>
+                    <p style="color: var(--pp-text-secondary); margin-bottom: 15px;">${cafe.cafe_description || ''}</p>
+                    <div style="margin-bottom: 15px;">
+                        <strong>Airtel Money Code:</strong>
+                        <div style="font-family: monospace; font-size: 18px; font-weight: 700; color: var(--pp-blue); background: #f0f7ff; padding: 12px; border-radius: 8px; margin-top: 5px;">
+                            ${cafe.airtel_money_code}
+                        </div>
+                    </div>
+                    ${cafe.qr_code_image ? `<div style="margin-bottom: 15px;"><strong>QR Code:</strong><br><img src="${cafe.qr_code_image}" class="cafe-qr"></div>` : ''}
+                `;
+                    closeModal('campusCafeModal');
+                    document.getElementById('cafePaymentModal').style.display = 'flex';
+                }
+            }
+        } catch (e) {
+            alert('Error loading cafe details');
+        }
+    }
+
+    async function processCafePayment() {
+        const cafeId = document.getElementById('selectedCafeId').value;
+        const amount = document.getElementById('cafePaymentAmount').value;
+        const description = document.getElementById('cafePaymentDescription').value;
+
+        if (!amount || amount <= 0) {
+            alert('Please enter a valid amount');
+            return;
+        }
+
+        try {
+            const res = await fetch('../backend/api/pay_cafe.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    cafe_id: cafeId,
+                    amount: amount,
+                    description: description
+                })
+            });
+            const data = await res.json();
+
+            if (data.success) {
+                closeModal('cafePaymentModal');
+                showCafeReceipt(data);
+            } else {
+                alert('❌ ' + data.error);
+            }
+        } catch (e) {
+            alert('Network error');
+        }
+    }
+
+    function showCafeReceipt(data) {
+        const content = document.getElementById('receiptContent');
+        content.innerHTML = `
+        <img src="assets/img/logo.png" class="receipt-watermark" onerror="this.style.display='none'">
+        <div class="receipt-header">
+            <img src="assets/img/logo.png" class="receipt-logo" onerror="this.src='https://ui-avatars.com/api/?name=KP&background=0D8ABC&color=fff'">
+            <div class="receipt-title-box">
+                <h1 class="receipt-main-title">KWEZA PAY</h1>
+                <span class="receipt-tagline">Campus Cafe Payment</span>
+            </div>
+        </div>
+        
+        <div class="receipt-info-line"><span class="receipt-info-label">CAFE:</span> ${data.cafe_name}</div>
+        <div class="receipt-info-line"><span class="receipt-info-label">REFERENCE:</span> ${data.reference_code}</div>
+        <div class="receipt-info-line"><span class="receipt-info-label">DATE:</span> ${new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}</div>
+        
+        <div class="receipt-section-title">PAYMENT DETAILS:</div>
+        <div class="receipt-details-grid">
+            <div class="receipt-detail-item">Amount Paid: MK ${parseFloat(data.amount).toLocaleString()}</div>
+            <div class="receipt-detail-item">Payment Method: ${data.airtel_code}</div>
+        </div>
+
+        <div class="receipt-status success">STATUS: SUCCESSFUL <i class="fas fa-check-circle"></i></div>
+        <div class="receipt-disclaimer">
+             This is your payment receipt for campus cafe transaction.
+             <br><br>
+             Payment was processed via Airtel Money.
+        </div>
+        <div class="receipt-footer">Thank you for using Kweza Pay</div>
+    `;
+        document.getElementById('receiptModal').style.display = 'flex';
+    }
+</script>

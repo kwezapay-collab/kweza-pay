@@ -1,0 +1,246 @@
+/* Merchant Mobile Overrides */
+
+@media (max-width: 900px) {
+    .pp-header {
+        padding: 0 20px !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        height: 80px !important;
+        min-height: 80px !important;
+        position: relative;
+        overflow: visible !important;
+    }
+
+    .pp-nav {
+        flex: 1;
+        display: flex !important;
+        align-items: center !important;
+        height: 100% !important;
+        position: relative;
+    }
+
+    .pp-nav .portal-text,
+    #nav-greeting {
+        margin-left: 35px !important;
+        font-size: 16px !important;
+        white-space: nowrap;
+        color: white;
+        font-weight: 700;
+        display: block !important;
+    }
+
+    /* Logo as Home Button */
+    header.pp-header .pp-nav a#homeLogo {
+        position: absolute !important;
+        top: 50% !important;
+        left: -10px !important;
+        transform: translateY(-50%) !important;
+        z-index: 100;
+        display: block !important;
+    }
+
+    header.pp-header .pp-nav img.pp-logo {
+        height: 150px !important;
+        width: auto !important;
+        max-height: none !important;
+        max-width: none !important;
+        object-fit: contain !important;
+    }
+
+    /* Hamburger Menu Button */
+    .pp-mobile-menu-btn {
+        display: block !important;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 5px;
+        z-index: 101;
+    }
+
+    /* Hide navigation links on mobile */
+    .pp-nav a.pp-nav-link {
+        display: none !important;
+    }
+
+    /* Mobile Dropdown Menu */
+    .pp-header-actions {
+        display: none !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #265D82;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0 !important;
+        padding: 0 !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        display: none !important;
+    }
+
+    .pp-header-actions.active {
+        display: flex !important;
+        animation: slideDown 0.25s ease-out;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .pp-header-actions .pp-header-icon,
+    .pp-header-actions .pp-logout {
+        width: 100%;
+        padding: 15px 25px;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        opacity: 1 !important;
+        font-size: 16px;
+        color: white !important;
+        text-decoration: none;
+    }
+
+    /* Add label specifically for Settings link in mobile menu */
+    .pp-header-actions .pp-header-icon[data-label="Settings"]::after {
+        content: "Settings";
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        margin-left: 0;
+    }
+
+    .pp-header-actions span {
+        display: none;
+    }
+
+    .pp-header-actions .pp-header-icon::after {
+        content: attr(data-label);
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+    }
+
+    .pp-header-actions i,
+    .pp-header-actions .profile-menu-icon {
+        font-size: 20px !important;
+        width: 24px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .admin-avatar {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    /* Make main content single column */
+    .pp-main.is-home {
+        grid-template-columns: 1fr !important;
+        padding: 20px 15px !important;
+    }
+
+    #actionSidebar {
+        order: -1;
+        margin-bottom: 8px !important;
+    }
+
+    /* Adjust QR code display */
+    .qr-hero {
+        padding: 15px !important;
+    }
+
+    .qr-image {
+        width: 150px !important;
+        height: 150px !important;
+    }
+
+    /* Balance card adjustments */
+    .pp-balance-amount {
+        font-size: 28px !important;
+    }
+
+    .pp-balance-title {
+        font-size: 14px !important;
+    }
+
+    /* Action grid for mobile */
+    .pp-actions-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+        margin-bottom: -8px !important;
+    }
+
+    .pp-action-item {
+        padding: 12px 8px !important;
+        min-height: 90px !important;
+    }
+
+    .pp-action-icon {
+        width: 54px !important;
+        height: 54px !important;
+        font-size: 22px !important;
+    }
+
+    .pp-action-label {
+        font-size: 14px !important;
+        line-height: 1.2;
+    }
+
+    /* Activity list mobile adjustments */
+    .pp-activity-item {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 8px;
+    }
+
+    .pp-activity-amount {
+        align-self: flex-end;
+        margin-top: -25px;
+    }
+
+    /* Card spacing */
+    .pp-card {
+        margin-bottom: -55px !important;
+        padding: 16px !important;
+    }
+
+    .pp-card-title {
+        font-size: 18px !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* Modal adjustments */
+    .modal-content {
+        width: 95% !important;
+        padding: 25px !important;
+    }
+
+    /* Button adjustments */
+    .pp-btn-pill {
+        padding: 12px 20px !important;
+        font-size: 15px !important;
+    }
+
+    /* Merchant ID badge */
+    .merchant-id-badge {
+        font-size: 11px !important;
+        padding: 6px 12px !important;
+    }
+}
+
+/* Base styles for the hamburger button (hidden on desktop) */
+.pp-mobile-menu-btn {
+    display: none;
+}
