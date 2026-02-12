@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient as createSupabaseClient } from '@supabase/supabase-js';
 import type { Database } from './types';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -9,7 +9,7 @@ if (!supabaseUrl || !supabaseServiceKey) {
 }
 
 // Server-side client with service role key for admin operations
-export const supabaseServer = createClient<Database>(
+export const supabaseServer = createSupabaseClient<Database>(
     supabaseUrl,
     supabaseServiceKey,
     {
@@ -19,3 +19,11 @@ export const supabaseServer = createClient<Database>(
         },
     }
 );
+
+/**
+ * Helper to get a Supabase client. 
+ * Returns the service role singleton.
+ */
+export async function createClient() {
+    return supabaseServer;
+}

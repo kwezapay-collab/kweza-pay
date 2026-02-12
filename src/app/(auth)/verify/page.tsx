@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import styles from './verify.module.css';
 
-export default function VerifyPage() {
+function VerifyForm() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const phoneFromUrl = searchParams.get('phone') || '';
@@ -119,5 +119,13 @@ export default function VerifyPage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function VerifyPage() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <VerifyForm />
+        </Suspense>
     );
 }
