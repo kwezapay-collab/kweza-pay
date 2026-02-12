@@ -1,0 +1,81 @@
+:root {
+  /* Legacy Kweza/PayPal Blue Palette */
+  --pp-dark-blue: #1D4A69;
+  --pp-blue: #265D82;
+  --pp-light-blue: #3A7FB0;
+
+  /* Grays & Context */
+  --pp-text: #242729;
+  --pp-text-secondary: #6C7378;
+  --pp-border: #DDE1E3;
+  --pp-bg-light: #F5F7FA;
+
+  /* Brand Colors from style.css */
+  --kweza-navy: #1D4A69;
+  --kweza-blue: #265D82;
+  --kweza-blue-dark: #1D4A69;
+  --kweza-gradient: linear-gradient(135deg, #1D4A69 0%, #265D82 100%);
+
+  /* Accents */
+  --pp-success: #16a34a;
+  --pp-error: #dc2626;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--pp-bg-light);
+  color: #1e293b;
+}
+
+/* Legacy Patterned Background */
+.kweza-pattern-bg {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.kweza-pattern-bg::before,
+.kweza-pattern-bg::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.kweza-pattern-bg::before {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(38, 93, 130, 0.1), transparent 40%),
+    radial-gradient(circle at 90% 90%, rgba(38, 93, 130, 0.1), transparent 40%);
+  opacity: 0.8;
+}
+
+.kweza-pattern-bg::after {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.826 10.531c-.66-3.625-3.625-6.591-7.25-7.251-1.282-.232-2.583-.312-3.882-.25L23.447 11.23a41.026 41.026 0 0 0-3.88.25c-3.625.66-6.591 3.625-7.251 7.251a41.026 41.026 0 0 0-.25 3.882l8.203 20.247c.062 1.3.142 2.6.25 3.882.66 3.625 3.625 6.591 7.25 7.251 1.282.232 2.583.312 3.882.25l20.247-8.203a41.026 41.026 0 0 0 3.88-.25c3.625-.66 6.591-3.625 7.251-7.251a41.026 41.026 0 0 0 .25-3.882l-8.203-20.247a41.026 41.026 0 0 0-.25-3.882z' fill='%23265D82' fill-opacity='.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 1;
+}
+
+a {
+  color: var(--pp-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+}

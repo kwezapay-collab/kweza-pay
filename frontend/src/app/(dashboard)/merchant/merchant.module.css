@@ -1,0 +1,317 @@
+.container {
+    min-height: 100vh;
+    background-color: var(--pp-bg-light);
+    position: relative;
+    overflow-x: hidden;
+}
+
+.container::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(17, 41, 94, 0.18), rgba(17, 41, 94, 0) 55%),
+        radial-gradient(circle at 85% 80%, rgba(14, 116, 144, 0.16), rgba(14, 116, 144, 0) 60%),
+        linear-gradient(135deg, rgba(17, 41, 94, 0.06), rgba(255, 255, 255, 0));
+    opacity: 0.26;
+}
+
+.container::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image: var(--kweza-pattern);
+    background-repeat: repeat;
+    background-size: 360px 360px;
+    opacity: 0.03;
+    filter: grayscale(1);
+}
+
+.loading,
+.pending {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    gap: 16px;
+    position: relative;
+    z-index: 10;
+}
+
+.header {
+    background: var(--pp-dark-blue);
+    color: white;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 35px;
+}
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-weight: 600;
+}
+
+.logoutBtn {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.2s;
+}
+
+.logoutBtn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.mainLayout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.contentArea {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebarArea {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Balance Card */
+.balanceCard {
+    background: #265D82;
+    color: white;
+    padding: 35px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.balanceCard::before,
+.balanceCard::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.35;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0) 60%),
+        radial-gradient(circle at 70% 70%, rgba(17, 41, 94, 0.18), rgba(17, 41, 94, 0) 60%);
+}
+
+.balanceCard::before {
+    width: 220px;
+    height: 220px;
+    top: -60px;
+    right: -70px;
+}
+
+.balanceCard::after {
+    width: 180px;
+    height: 180px;
+    bottom: -50px;
+    left: -60px;
+}
+
+.balanceCardContent {
+    position: relative;
+    z-index: 1;
+}
+
+.balanceLabel {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.balanceAmount {
+    font-size: 38px;
+    font-weight: 800;
+}
+
+/* Card System */
+.card {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--pp-border);
+}
+
+.cardTitle {
+    color: var(--pp-dark-blue);
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* QR Section */
+.qrHero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 12px;
+}
+
+.qrImage {
+    width: 180px;
+    height: 180px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+}
+
+.merchantIdBadge {
+    background: var(--pp-dark-blue);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.qrInstructions {
+    color: var(--pp-text-secondary);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Activity List */
+.activityList {
+    display: flex;
+    flex-direction: column;
+}
+
+.activityItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.activityItem:last-child {
+    border-bottom: none;
+}
+
+.activityInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.activityName {
+    font-weight: 700;
+    color: var(--pp-dark-blue);
+    font-size: 15px;
+}
+
+.activityDate {
+    font-size: 12px;
+    color: var(--pp-text-secondary);
+    font-weight: 600;
+}
+
+.activityAmount {
+    font-weight: 800;
+    font-size: 15px;
+    color: #10b981;
+}
+
+/* Actions */
+.actionsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.actionItem {
+    background: white;
+    padding: 15px 10px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    border: 1px solid var(--pp-border);
+    transition: all 0.2s;
+}
+
+.actionItem:hover {
+    transform: translateY(-3px);
+    border-color: var(--pp-blue);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.actionIcon {
+    width: 40px;
+    height: 40px;
+    background: #f0f7ff;
+    color: var(--pp-blue);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.actionLabel {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--pp-text-secondary);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .mainLayout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebarArea {
+        order: -1;
+    }
+}

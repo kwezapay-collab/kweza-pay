@@ -1,0 +1,27 @@
+
+> kweza-nextjs@1.0.0 dev
+> next dev
+
+  Γû▓ Next.js 14.2.35
+  - Local:        http://localhost:3000
+  - Environments: .env.local
+
+ Γ£ô Starting...
+ Γ£ô Ready in 5.2s
+ Γùï Compiling /api/auth/register ...
+ Γ£ô Compiled /api/auth/register in 9.5s (100 modules)
+[Registration] Verification code for 265999888777: 663604
+ POST /api/auth/register 200 in 16000ms
+ Γ£ô Compiled /api/auth/verify in 452ms (95 modules)
+ POST /api/auth/verify 200 in 1633ms
+ Γùï Compiling /api/auth/login ...
+ Γ£ô Compiled /api/auth/login in 2.4s (197 modules)
+ POST /api/auth/login 401 in 13454ms
+ POST /api/auth/login 200 in 1143ms
+ Γ£ô Compiled /api/auth/register in 269ms (100 modules)
+[Registration] Verification code for 265999000000: 927786
+ POST /api/auth/register 200 in 2625ms
+ Γ£ô Compiled /api/auth/verify in 301ms (95 modules)
+ POST /api/auth/verify 200 in 3067ms
+ Γ£ô Compiled /api/auth/login in 156ms (199 modules)
+ POST /api/auth/login 200 in 1343ms

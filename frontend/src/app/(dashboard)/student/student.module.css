@@ -1,0 +1,341 @@
+.container {
+    min-height: 100vh;
+    padding-bottom: 60px;
+}
+
+.loading {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--pp-text-secondary);
+}
+
+/* Header */
+.header {
+    background-color: var(--pp-blue);
+    padding: 0 40px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 150px;
+    position: absolute !important;
+    top: 50% !important;
+    left: -40px !important;
+    transform: translateY(-50%) !important;
+    z-index: 100;
+}
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    color: white;
+}
+
+.userName {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.logoutBtn {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    background: none;
+    border: none;
+}
+
+/* Main Layout Grid */
+.mainLayout {
+    max-width: 1100px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 40px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Left Column */
+.leftCol {
+    grid-column: 1;
+}
+
+/* Right Column */
+.rightCol {
+    grid-column: 2;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    margin-bottom: 25px;
+    border: 1px solid var(--pp-border);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.cardTitle {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: var(--pp-text);
+}
+
+/* Balance Card Specific */
+.balanceCard {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    margin-bottom: 25px;
+    border: 1px solid var(--pp-border);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.balanceLabel {
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: underline;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.balanceAmount {
+    font-size: 42px;
+    font-weight: 400;
+    margin: 10px 0;
+    color: var(--pp-text);
+}
+
+.balanceAvailable {
+    font-size: 14px;
+    color: var(--pp-text-secondary);
+    margin-bottom: 25px;
+}
+
+/* Watermark/Pattern on Balance Card */
+.balanceCard::after {
+    content: "Big Big";
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    font-size: 80px;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.03);
+    pointer-events: none;
+    transform: rotate(-15deg);
+}
+
+.actionsGrid {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.actionBtn {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100px;
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+}
+
+.actionIcon {
+    width: 60px;
+    height: 60px;
+    background: #f5f7fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--pp-blue);
+    transition: background 0.2s;
+}
+
+.actionBtn:hover .actionIcon {
+    background: #ebeeef;
+}
+
+.actionLabel {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--pp-text);
+    transition: color 0.2s ease;
+}
+
+.actionBtn:hover .actionLabel {
+    color: var(--pp-blue);
+}
+
+/* Activity Items */
+.activityList {
+    margin-top: 20px;
+}
+
+.activityItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid #f0f2f4;
+    transition: background-color 0.2s ease;
+}
+
+.activityItem:hover {
+    background-color: #f8fafc;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    border-radius: 8px;
+}
+
+.activityInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.activityDesc {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.activityDate {
+    font-size: 13px;
+    color: var(--pp-text-secondary);
+}
+
+.activityAmount {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.debit {
+    color: var(--pp-text);
+}
+
+.credit {
+    color: #1a7f37;
+}
+
+.emptyState {
+    text-align: center;
+    color: var(--pp-text-secondary);
+    padding: 20px 0;
+}
+
+/* Forms in Modals */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input {
+    padding: 12px;
+    border: 1px solid var(--pp-border);
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.submitBtn {
+    background-color: var(--pp-dark-blue);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.2s;
+}
+
+.submitBtn:hover {
+    background-color: var(--pp-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(29, 74, 105, 0.2);
+}
+
+@media (max-width: 900px) {
+    .mainLayout {
+        grid-template-columns: 1fr;
+        margin: 20px auto;
+        padding: 0 15px;
+        gap: 20px;
+    }
+
+    .header {
+        padding: 15px 20px;
+        min-height: auto;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo img {
+        position: static !important;
+        transform: none !important;
+        height: 100px;
+    }
+
+    .headerActions {
+        width: 100%;
+        justify-content: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 10px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .balanceAmount {
+        font-size: 32px;
+    }
+
+    .leftCol,
+    .rightCol {
+        grid-column: auto;
+        width: 100%;
+    }
+}
