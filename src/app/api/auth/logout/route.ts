@@ -2,6 +2,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { clearAuthToken } from '@/lib/auth/jwt';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * POST /api/auth/logout
  * Converts frontend/logout.php
