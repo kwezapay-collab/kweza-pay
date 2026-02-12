@@ -25,3 +25,172 @@
  POST /api/auth/verify 200 in 3067ms
  Γ£ô Compiled /api/auth/login in 156ms (199 modules)
  POST /api/auth/login 200 in 1343ms
+Error: ENOENT: no such file or directory, scandir 'C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\src\app'
+    at async Object.readdir (node:internal/fs/promises:958:18)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'C:\\Users\\aceco\\Desktop\\kweza-app-clean-version (1)\\kweza-app-clean-version\\frontend\\src\\app'
+}
+ Γ¿» unhandledRejection: Error: ENOENT: no such file or directory, scandir 'C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\src\app'
+    at async Object.readdir (node:internal/fs/promises:958:18)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'C:\\Users\\aceco\\Desktop\\kweza-app-clean-version (1)\\kweza-app-clean-version\\frontend\\src\\app'
+}
+ Γ¿» unhandledRejection: Error: ENOENT: no such file or directory, scandir 'C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\src\app'
+    at async Object.readdir (node:internal/fs/promises:958:18)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'C:\\Users\\aceco\\Desktop\\kweza-app-clean-version (1)\\kweza-app-clean-version\\frontend\\src\\app'
+}
+Error: ENOENT: no such file or directory, scandir 'C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\src\app'
+    at async Object.readdir (node:internal/fs/promises:958:18)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'C:\\Users\\aceco\\Desktop\\kweza-app-clean-version (1)\\kweza-app-clean-version\\frontend\\src\\app'
+}
+ Γ¿» unhandledRejection: Error: ENOENT: no such file or directory, scandir 'C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\src\app'
+    at async Object.readdir (node:internal/fs/promises:958:18)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'C:\\Users\\aceco\\Desktop\\kweza-app-clean-version (1)\\kweza-app-clean-version\\frontend\\src\\app'
+}
+ Γ¿» unhandledRejection: Error: ENOENT: no such file or directory, scandir 'C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\src\app'
+    at async Object.readdir (node:internal/fs/promises:958:18)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'C:\\Users\\aceco\\Desktop\\kweza-app-clean-version (1)\\kweza-app-clean-version\\frontend\\src\\app'
+}
+Error: ENOENT: no such file or directory, scandir 'C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\src\app'
+    at async Object.readdir (node:internal/fs/promises:958:18)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'C:\\Users\\aceco\\Desktop\\kweza-app-clean-version (1)\\kweza-app-clean-version\\frontend\\src\\app'
+}
+ Γ¿» unhandledRejection: Error: ENOENT: no such file or directory, scandir 'C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\src\app'
+    at async Object.readdir (node:internal/fs/promises:958:18)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'C:\\Users\\aceco\\Desktop\\kweza-app-clean-version (1)\\kweza-app-clean-version\\frontend\\src\\app'
+}
+ Γ¿» unhandledRejection: Error: ENOENT: no such file or directory, scandir 'C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\src\app'
+    at async Object.readdir (node:internal/fs/promises:958:18)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'C:\\Users\\aceco\\Desktop\\kweza-app-clean-version (1)\\kweza-app-clean-version\\frontend\\src\\app'
+}
+Error: ENOENT: no such file or directory, scandir 'C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\src\app'
+    at async Object.readdir (node:internal/fs/promises:958:18)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'C:\\Users\\aceco\\Desktop\\kweza-app-clean-version (1)\\kweza-app-clean-version\\frontend\\src\\app'
+}
+ Γ¿» unhandledRejection: Error: ENOENT: no such file or directory, scandir 'C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\src\app'
+    at async Object.readdir (node:internal/fs/promises:958:18)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'C:\\Users\\aceco\\Desktop\\kweza-app-clean-version (1)\\kweza-app-clean-version\\frontend\\src\\app'
+}
+ Γ¿» unhandledRejection: Error: ENOENT: no such file or directory, scandir 'C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\src\app'
+    at async Object.readdir (node:internal/fs/promises:958:18)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'C:\\Users\\aceco\\Desktop\\kweza-app-clean-version (1)\\kweza-app-clean-version\\frontend\\src\\app'
+}
+ Γ¿» Module not found: Error: Can't resolve './node_modules/next/dist/client/app-next-dev.js' in 'C:\Users\aceco\Desktop\kweza-app-clean-version (1)\kweza-app-clean-version\frontend'
