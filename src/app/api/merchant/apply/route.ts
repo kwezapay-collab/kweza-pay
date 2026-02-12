@@ -3,6 +3,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { supabaseServer } from '@/lib/supabase/server';
 import { getCurrentUser } from '@/lib/auth/jwt';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * POST /api/merchant/apply
  * Converts backend/api/apply_merchant.php

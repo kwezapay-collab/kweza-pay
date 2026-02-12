@@ -3,6 +3,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { supabaseServer } from '@/lib/supabase/server';
 import bcrypt from 'bcryptjs';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * POST /api/auth/register
  * Converts backend/api/register.php

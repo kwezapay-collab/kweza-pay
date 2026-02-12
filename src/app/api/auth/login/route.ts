@@ -4,6 +4,8 @@ import { supabaseServer } from '@/lib/supabase/server';
 import { setAuthToken } from '@/lib/auth/jwt';
 import bcrypt from 'bcryptjs';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * POST /api/auth/login
  * Converts backend/api/login.php to Next.js API route

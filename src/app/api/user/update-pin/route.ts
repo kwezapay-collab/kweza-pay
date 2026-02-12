@@ -4,6 +4,8 @@ import { supabaseServer } from '@/lib/supabase/server';
 import { getCurrentUser } from '@/lib/auth/jwt';
 import bcrypt from 'bcryptjs';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * PUT /api/user/update-pin
  * Change user PIN
