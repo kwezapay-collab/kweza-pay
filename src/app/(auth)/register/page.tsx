@@ -28,8 +28,8 @@ export default function RegisterPage() {
             return;
         }
 
-        if (formData.pin.length !== 4) {
-            setError('PIN must be 4 digits');
+        if (formData.pin.length < 4 || formData.pin.length > 6) {
+            setError('PIN must be 4-6 digits');
             return;
         }
 
@@ -164,14 +164,14 @@ export default function RegisterPage() {
                     )}
 
                     <div className={styles.formGroup}>
-                        <label htmlFor="pin">4-Digit PIN</label>
+                        <label htmlFor="pin">PIN (4-6 digits)</label>
                         <input
                             id="pin"
                             type="password"
                             value={formData.pin}
                             onChange={(e) => setFormData({ ...formData, pin: e.target.value })}
-                            maxLength={4}
-                            pattern="\d{4}"
+                            maxLength={6}
+                            pattern="\d{4,6}"
                             required
                             disabled={loading}
                             className={styles.input}
@@ -185,8 +185,8 @@ export default function RegisterPage() {
                             type="password"
                             value={formData.confirmPin}
                             onChange={(e) => setFormData({ ...formData, confirmPin: e.target.value })}
-                            maxLength={4}
-                            pattern="\d{4}"
+                            maxLength={6}
+                            pattern="\d{4,6}"
                             required
                             disabled={loading}
                             className={styles.input}

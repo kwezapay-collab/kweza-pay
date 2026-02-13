@@ -148,8 +148,8 @@ export default function LoginPage() {
                                             type="password"
                                             value={pin}
                                             onChange={(e) => setPin(e.target.value)}
-                                            placeholder="••••"
-                                            maxLength={4}
+                                            placeholder="••••••"
+                                            maxLength={6}
                                             className={`${styles.input} ${styles.pinInput}`}
                                             required
                                             autoComplete="off"
